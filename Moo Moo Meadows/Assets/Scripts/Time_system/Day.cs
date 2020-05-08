@@ -5,16 +5,21 @@ using UnityEngine.UI;
 
 public class Day : MonoBehaviour
 {
-    public test_event_data eventData;
+    public Event eventData;
     int DayOfWeek;
     Calendar calendar;
     Week week;
+
+    Button thisButton;
+    Color startingColor;
 
     // Start is called before the first frame update
     public void Start()
     {
         calendar = this.GetComponentInParent<Calendar>();
         week = this.GetComponentInParent<Week>();
+        thisButton = this.GetComponent<Button>();
+        startingColor = thisButton.colors.normalColor;
 
         //hierdoor luistert hij of er een week voorbij is
         calendar.advanceWeek.AddListener(AdvanceWeek);
@@ -50,5 +55,17 @@ public class Day : MonoBehaviour
     void AdvanceWeek()
     {
         this.eventData = calendar.GetEventForDay((week.thisWeek*7) + DayOfWeek);
+
+        //verander de kleur van dagen met ingeplande events
+        ColorBlock buttonColor = thisButton.colors;
+        if (this.eventData != null)
+        {
+            buttonColor.normalColor = Color.cyan;
+        }
+        else
+        {
+            buttonColor.normalColor = startingColor;
+        }
+        thisButton.colors = buttonColor;
     }
 }

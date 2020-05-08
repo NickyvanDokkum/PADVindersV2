@@ -8,7 +8,7 @@ public class Calendar : MonoBehaviour
 {
     List<DayInformation> plannedDays;
     public int currentDay;
-    public test_event_data todaysEvent;
+    public Event todaysEvent;
 
     // hierdoor kunnen de scripten van de weeken meeluisteren of er een week voorbij is
     public UnityEvent advanceWeek;
@@ -18,10 +18,6 @@ public class Calendar : MonoBehaviour
     {
         currentDay = 1;
         plannedDays = new List<DayInformation>();
-
-        // dit is om te testen
-        FillMonth(1);
-        FillMonth(28);
     }
 
     public void AdvanceDay()
@@ -77,7 +73,7 @@ public class Calendar : MonoBehaviour
 
     }
 
-    public test_event_data GetEventForDay(int day)
+    public Event GetEventForDay(int day)
     {
         foreach (DayInformation plannedDay in plannedDays)
         {
@@ -90,7 +86,7 @@ public class Calendar : MonoBehaviour
         return null;
     }
 
-    public void PlanEvent(int day, test_event_data cardEvent)
+    public void PlanEvent(int day, Event cardEvent)
     {
         plannedDays.Add(new DayInformation(day, cardEvent));
     }
@@ -98,24 +94,14 @@ public class Calendar : MonoBehaviour
     class DayInformation
     {
         public int day;
-        public test_event_data cardEvent;
+        public Event cardEvent;
 
         // hier moet ook het event worden opgeslagen
 
-        public DayInformation(int day, test_event_data cardEvent)
+        public DayInformation(int day, Event cardEvent)
         {
             this.day = day;
             this.cardEvent = cardEvent;
-        }
-    }
-
-    // dit is alleen om te testen
-    public void FillMonth(int startWeek)
-    {
-        test_event_data testData = this.GetComponentInChildren<test_event_data>();
-        for (int index = 0; index < 28; index++)
-        {
-            PlanEvent(startWeek + index, testData);
         }
     }
 }

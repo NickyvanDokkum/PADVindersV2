@@ -8,7 +8,7 @@ public class KaartSpawner : MonoBehaviour
 
     void Start()
     {
-        KaartInfo.eventnaam = "bbb"; //selecteert een event
+        KaartInfo.eventnaam = "Damages to your maintenance"; //selecteert een event
         meerdereKaarten = new GameObject[KaartInfo.GetCardAmount()]; //zet de array naar de hoeveelheid kaart die in de GetCardAmount() functie word aangegeven
         for (int eventKaartAmount = 0; eventKaartAmount < meerdereKaarten.Length; eventKaartAmount++)
         {

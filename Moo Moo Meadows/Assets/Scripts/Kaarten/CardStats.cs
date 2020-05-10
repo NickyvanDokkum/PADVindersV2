@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class CardStats : MonoBehaviour
 {
-   [SerializeField] private int money, hapiness, grades, health, home;
+   [SerializeField] public  int money, hapiness, grades, health, home;
     
-    public int[] GetStats() {
-        int[] stats = new int[5];
+    public  int[] GetStats() {
+         int[] stats = new int[5];
 
         stats[0] = money;
         stats[1] = hapiness;

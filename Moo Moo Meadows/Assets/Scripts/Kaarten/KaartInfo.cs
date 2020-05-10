@@ -14,10 +14,15 @@ public class KaartInfo : MonoBehaviour
     {
         switch (eventnaam)
         {
-            case "aaa":
-                return 2;
-            case "bbb":
+            //HUIS KAARTEN
+            case "Damages to your maintenance":
                 return 4;
+            case "Rent Increase":
+                return 4;
+            case "Keys":
+                return 4;
+            case "Rude invitation":
+                return 5;
         }
 
         return 0;
@@ -26,45 +31,110 @@ public class KaartInfo : MonoBehaviour
     {
         switch (eventnaam)
         {
-            case "aaa":
+            //HUIS KAARTEN
+            case "Damages to your maintenance":
 
                 switch (kaartnaam)
                 {
                     case "kaart1":
-                        titel.text = "111111111";
-                        omschrijving.text = "1111111111111";
+                        titel.text = "Pay up";
+                        omschrijving.text = "pay for the repairs";
                         break;
                     case "kaart2":
-                        titel.text = "22222";
-                        omschrijving.text = "6969696969696969";
+                        titel.text = "Not your problem";
+                        omschrijving.text = "Demand your landlord to pay for this";
+                        break;
+                    case "kaart3":
+                        titel.text = "Contract";
+                        omschrijving.text = "In your contract it says repairs in your house will be compensated";
+                        break;
+                    case "kaart4":
+                        titel.text = "Contract";
+                        omschrijving.text = "In your contract it says big maintenance repairs will be compensated";
                         break;
                 }
                 break;
         }
         switch (eventnaam)
         {
-            case "bbb":
+            case "Rent Increase":
                 switch (kaartnaam)
                 {
                     case "kaart1":
-                        titel.text = "123123";
-                        omschrijving.text = "11111111231232111111";
+                        titel.text = "Nothing";
+                        omschrijving.text = "Dont do anything";
+                        this.GetComponent<CardStats>().money = 10;
                         break;
                     case "kaart2":
-                        titel.text = "1231223";
-                        omschrijving.text = "12312";
+                        titel.text = "Justice";
+                        omschrijving.text = "Call the Rent Tribunal";
                         break;
                     case "kaart3":
-                        titel.text = "123asgdsagd123";
-                        omschrijving.text = "11111111231asdgd232111111";
+                        titel.text = "Contract";
+                        omschrijving.text = "In your contract it says Landlords can only increase the rent once every year";
                         break;
                     case "kaart4":
-                        titel.text = "123sadggdsa1223";
-                        omschrijving.text = "sadgsadg";
+                        titel.text = "No thank you";
+                        omschrijving.text = "Decline the advancement";
                         break;
                 }
                 break;
         }
+        switch (eventnaam)
+        {
+              case "Keys":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Pay";
+                        omschrijving.text = "Pay your landlord";
+                        break;
+                    case "kaart2":
+                        titel.text = "Another way";
+                        omschrijving.text = "Buy new keys from a keymaker";
+                        break;
+                    case "kaart3":
+                        titel.text = "Contract";
+                        omschrijving.text = "In your contract it says the costs are compensated ";
+                        break;
+                    case "kaart4":
+                        titel.text = "Sleepover";
+                        omschrijving.text = "Ask a friend if you can sleep over for now";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "Rude invitation":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Nothing";
+                        omschrijving.text = "let him enter, as long as he doesnt break anything";
+                        break;
+                    case "kaart2":
+                        titel.text = "Who you gonna call?";
+                        omschrijving.text = "Call the police, this is a legitimate crime";
+                        break;
+                    case "kaart3":
+                        titel.text = "Dont open!";
+                        omschrijving.text = "Tell him he cant enter because you are naked";
+                        break;
+                    case "kaart4":
+                        titel.text = "Contract";
+                        omschrijving.text = "Tell him there is no written agreement for allowing your landlord to always come in, then send him out";
+                        break;
+                    case "kaart5":
+                        titel.text = "No thank you";
+                        omschrijving.text = "In your contract it says you can decline his entrance, hope it works...";
+                        break;
+                }
+                break;
+        }
+
     }
 
     void Update()

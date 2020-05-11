@@ -23,6 +23,10 @@ public class KaartInfo : MonoBehaviour
                 return 4;
             case "Rude invitation":
                 return 5;
+            case "Extra service fees":
+                return 3;
+
+
         }
 
         return 0;
@@ -130,6 +134,27 @@ public class KaartInfo : MonoBehaviour
                     case "kaart5":
                         titel.text = "No thank you";
                         omschrijving.text = "In your contract it says you can decline his entrance, hope it works...";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "Extra service fees":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Whatever";
+                        omschrijving.text = "Pay the extra service fees";
+                        break;
+                    case "kaart2":
+                        titel.text = "No is no";
+                        omschrijving.text = "Just don't pay any service fees anymore";
+                        break;
+                    case "kaart3":
+                        titel.text = "Justice";
+                        omschrijving.text = "Call the Rent Tribunal";
                         break;
                 }
                 break;

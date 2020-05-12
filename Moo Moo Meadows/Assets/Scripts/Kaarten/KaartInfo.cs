@@ -25,7 +25,10 @@ public class KaartInfo : MonoBehaviour
                 return 5;
             case "Extra service fees":
                 return 3;
-
+            case "Noise complaint":
+                return 3;
+            case "Pet/ abandoned puppy":
+                return 4;
 
         }
 
@@ -155,6 +158,52 @@ public class KaartInfo : MonoBehaviour
                     case "kaart3":
                         titel.text = "Justice";
                         omschrijving.text = "Call the Rent Tribunal";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "Noise complaint":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Pay";
+                        omschrijving.text = "Just pay it";
+                        break;
+                    case "kaart2":
+                        titel.text = "Contract";
+                        omschrijving.text = "In your contract it says there are no fees for a noise complaint";
+                        break;
+                    case "kaart3":
+                        titel.text = "Lie";
+                        omschrijving.text = "You weren't home, how will he prove you wrong";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "Pet/ abandoned puppy":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Bye bye";
+                        omschrijving.text = "Just pay it";
+                        break;
+                    case "kaart2":
+                        titel.text = "Poor cat";
+                        omschrijving.text = "Say you can't leave the pet alone anymore";
+                        break;
+                    case "kaart3":
+                        titel.text = "Contract";
+                        omschrijving.text = "You can't find anything about this rule in your contract";
+                        break;
+                    case "kaart4":
+                        titel.text = "Contract";
+                        omschrijving.text = "In the contract it says pets are allowed";
                         break;
                 }
                 break;

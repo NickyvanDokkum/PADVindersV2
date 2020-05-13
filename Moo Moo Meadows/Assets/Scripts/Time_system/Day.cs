@@ -8,6 +8,8 @@ public class Day : MonoBehaviour
     public Event eventData;
     int DayOfWeek;
     Calendar calendar;
+    GameObject eventInfoViewer;
+    GameObject calendarUI;
     Week week;
 
     Button thisButton;
@@ -17,6 +19,8 @@ public class Day : MonoBehaviour
     public void Start()
     {
         calendar = this.GetComponentInParent<Calendar>();
+        eventInfoViewer = GameObject.Find("Structured event change");
+        calendarUI = GameObject.Find("calendarUI");
         week = this.GetComponentInParent<Week>();
         thisButton = this.GetComponent<Button>();
         startingColor = thisButton.colors.normalColor;
@@ -67,5 +71,15 @@ public class Day : MonoBehaviour
             buttonColor.normalColor = startingColor;
         }
         thisButton.colors = buttonColor;
+    }
+
+    public void ShowEventInfo()
+    {
+        if (this.eventData != null)
+        {
+            eventInfoViewer.SetActive(true);
+            eventInfoViewer.GetComponent<ViewEventInfo>().ShowEvent(eventData);
+            calendarUI.SetActive(false);
+        }
     }
 }

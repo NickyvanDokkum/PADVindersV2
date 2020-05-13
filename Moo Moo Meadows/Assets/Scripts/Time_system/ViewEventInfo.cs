@@ -11,8 +11,8 @@ public class ViewEventInfo : MonoBehaviour
 
     void Start()
     {
-        eventTitle = transform.Find("Title").GetComponent<Text>();
-        weekDescription = transform.Find("Description").GetComponent<Text>();
+        eventTitle = GameObject.Find("Title").GetComponent<Text>();
+        weekDescription = GameObject.Find("Description").GetComponent<Text>();
     }
 
     public void ShowEvent(Event eventInfo)

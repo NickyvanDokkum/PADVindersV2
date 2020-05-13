@@ -601,6 +601,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeek: 0
+  advanceToNextWeek:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &93172928
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &106878377
 RectTransform:
   m_ObjectHideFlags: 0
@@ -916,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &110109626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -989,7 +992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &149707268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1150,7 +1153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &183443746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1841,6 +1844,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeek: 0
+  advanceToNextWeek:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &293420049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,6 +3084,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeek: 0
+  advanceToNextWeek:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &417574464
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,7 +4219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &621713278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5014,7 +5023,7 @@ GameObject:
   - component: {fileID: 686849677}
   - component: {fileID: 686849678}
   m_Layer: 5
-  m_Name: Calender
+  m_Name: Calendar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6148,6 +6157,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisWeek: 0
+  advanceToNextWeek:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &843097238
 GameObject:
   m_ObjectHideFlags: 0
@@ -6157,13 +6169,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 843097239}
+  - component: {fileID: 843097240}
   m_Layer: 5
   m_Name: Structured event change
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &843097239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6193,6 +6206,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &843097240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843097238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9762327d963b32a48ac565ba0f42d8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859995768
 GameObject:
   m_ObjectHideFlags: 0
@@ -10931,7 +10956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1527532222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11332,7 +11357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1596096191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13197,7 +13222,6 @@ GameObject:
   - component: {fileID: 1846340576}
   - component: {fileID: 1846340578}
   - component: {fileID: 1846340577}
-  - component: {fileID: 1846340579}
   m_Layer: 5
   m_Name: event place
   m_TagString: Untagged
@@ -13262,18 +13286,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1846340575}
   m_CullTransparentMesh: 0
---- !u!114 &1846340579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846340575}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9762327d963b32a48ac565ba0f42d8a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1846529904
 GameObject:
   m_ObjectHideFlags: 0
@@ -14536,7 +14548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2056580543
 RectTransform:
   m_ObjectHideFlags: 0

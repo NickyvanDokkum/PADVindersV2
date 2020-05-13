@@ -20,45 +20,46 @@ public class Day : MonoBehaviour
     {
         calendar = this.GetComponentInParent<Calendar>();
         eventInfoViewer = GameObject.Find("Structured event change");
-        calendarUI = GameObject.Find("calendarUI");
+        calendarUI = GameObject.Find("Calendar");
         week = this.GetComponentInParent<Week>();
         thisButton = this.GetComponent<Button>();
         startingColor = thisButton.colors.normalColor;
 
         //hierdoor luistert hij of er een week voorbij is
-        calendar.advanceWeek.AddListener(AdvanceWeek);
+        week.advanceToNextWeek.AddListener(AdvanceWeek);
 
 
-        string dayText = transform.Find("Text").GetComponent<Text>().text.Trim();
+        string dayText = transform.Find("Text").GetComponent<Text>().text.Trim().ToLower();
         switch (dayText)
         {
-            case ("Monday"):
-                DayOfWeek = 0;
-                break;
-            case ("Theusday"):
+            case ("monday"):
                 DayOfWeek = 1;
                 break;
-            case ("Wednesday"):
+            case ("tuesday"):
                 DayOfWeek = 2;
                 break;
-            case ("Thursday"):
+            case ("wednesday"):
                 DayOfWeek = 3;
                 break;
-            case ("Friday"):
+            case ("thursday"):
                 DayOfWeek = 4;
                 break;
-            case ("Saturday"):
+            case ("friday"):
                 DayOfWeek = 5;
                 break;
-            case ("Sunday"):
+            case ("saturday"):
                 DayOfWeek = 6;
+                break;
+            case ("sunday"):
+                DayOfWeek = 7;
                 break;
         }
     }
 
     void AdvanceWeek()
     {
-        this.eventData = calendar.GetEventForDay((week.thisWeek*7) + DayOfWeek);
+        int weekOffset = -1;
+        this.eventData = calendar.GetEventForDay((week.thisWeek + weekOffset) * 7 + DayOfWeek);
 
         //verander de kleur van dagen met ingeplande events
         ColorBlock buttonColor = thisButton.colors;

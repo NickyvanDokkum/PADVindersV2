@@ -10,6 +10,9 @@ public class Calendar : MonoBehaviour
     public int currentDay;
     public Event todaysEvent;
 
+    //dit moet hier opgeslagen worden omdat het moet starten als het aan staat en als ik het uit ga zetten na elke dag gaat alles kapot
+    public GameObject eventInfoViewer;
+
     // hierdoor kunnen de scripten van de weeken meeluisteren of er een week voorbij is
     public UnityEvent advanceWeek;
 
@@ -18,6 +21,12 @@ public class Calendar : MonoBehaviour
     {
         currentDay = 1;
         plannedDays = new List<DayInformation>();
+
+        //dit hoort nog bij de event viewer
+        eventInfoViewer = GameObject.Find("Structured event change");
+        //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
+        eventInfoViewer.GetComponent<ViewEventInfo>().Start();
+        eventInfoViewer.SetActive(false);
     }
 
     public void AdvanceDay()

@@ -9,7 +9,7 @@ public class ViewEventInfo : MonoBehaviour
     Text eventTitle;
     Text weekDescription;
 
-    void Start()
+    public void Start()
     {
         eventTitle = GameObject.Find("Title").GetComponent<Text>();
         weekDescription = GameObject.Find("Description").GetComponent<Text>();

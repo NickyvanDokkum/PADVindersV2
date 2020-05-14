@@ -5,50 +5,80 @@ using UnityEngine.UI;
 
 public class Day : MonoBehaviour
 {
-    public test_event_data eventData;
+    public Event eventData;
     int DayOfWeek;
     Calendar calendar;
+    GameObject calendarUI;
     Week week;
+
+    Button thisButton;
+    Color startingColor;
 
     // Start is called before the first frame update
     public void Start()
     {
         calendar = this.GetComponentInParent<Calendar>();
+        calendarUI = GameObject.Find("Calendar");
         week = this.GetComponentInParent<Week>();
+        thisButton = this.GetComponent<Button>();
+        startingColor = thisButton.colors.normalColor;
 
         //hierdoor luistert hij of er een week voorbij is
-        calendar.advanceWeek.AddListener(AdvanceWeek);
+        week.advanceToNextWeek.AddListener(AdvanceWeek);
 
 
-        string dayText = transform.Find("Text").GetComponent<Text>().text.Trim();
+        string dayText = transform.Find("Text").GetComponent<Text>().text.Trim().ToLower();
         switch (dayText)
         {
-            case ("Monday"):
-                DayOfWeek = 0;
-                break;
-            case ("Theusday"):
+            case ("monday"):
                 DayOfWeek = 1;
                 break;
-            case ("Wednesday"):
+            case ("tuesday"):
                 DayOfWeek = 2;
                 break;
-            case ("Thursday"):
+            case ("wednesday"):
                 DayOfWeek = 3;
                 break;
-            case ("Friday"):
+            case ("thursday"):
                 DayOfWeek = 4;
                 break;
-            case ("Saturday"):
+            case ("friday"):
                 DayOfWeek = 5;
                 break;
-            case ("Sunday"):
+            case ("saturday"):
                 DayOfWeek = 6;
+                break;
+            case ("sunday"):
+                DayOfWeek = 7;
                 break;
         }
     }
 
     void AdvanceWeek()
     {
-        this.eventData = calendar.GetEventForDay((week.thisWeek*7) + DayOfWeek);
+        int weekOffset = -1;
+        this.eventData = calendar.GetEventForDay((week.thisWeek + weekOffset) * 7 + DayOfWeek);
+
+        //verander de kleur van dagen met ingeplande events
+        ColorBlock buttonColor = thisButton.colors;
+        if (this.eventData != null)
+        {
+            buttonColor.normalColor = Color.cyan;
+        }
+        else
+        {
+            buttonColor.normalColor = startingColor;
+        }
+        thisButton.colors = buttonColor;
+    }
+
+    public void ShowEventInfo()
+    {
+        if (this.eventData != null)
+        {
+            calendar.eventInfoViewer.SetActive(true);
+            calendar.eventInfoViewer.GetComponent<ViewEventInfo>().ShowEvent(eventData);
+            calendarUI.SetActive(false);
+        }
     }
 }

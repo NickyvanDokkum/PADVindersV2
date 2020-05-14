@@ -273,3 +273,6 @@ D:\School\hbo\ict\jaar 1\pad\PADvinders-handboek\Moo Moo Meadows\obj\Debug\Assem
 D:\School\hbo\ict\jaar 1\pad\PADvinders-handboek\Moo Moo Meadows\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\School\hbo\ict\jaar 1\pad\PADvinders-handboek\Moo Moo Meadows\obj\Debug\Assembly-CSharp.dll
 D:\School\hbo\ict\jaar 1\pad\PADvinders-handboek\Moo Moo Meadows\obj\Debug\Assembly-CSharp.pdb
+D:\Jelmar Riedeman\Desktop\PADVindersV2\Moo Moo Meadows\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\Jelmar Riedeman\Desktop\PADVindersV2\Moo Moo Meadows\obj\Debug\Assembly-CSharp.dll
+D:\Jelmar Riedeman\Desktop\PADVindersV2\Moo Moo Meadows\obj\Debug\Assembly-CSharp.pdb

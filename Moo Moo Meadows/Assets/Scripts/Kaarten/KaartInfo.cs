@@ -29,6 +29,11 @@ public class KaartInfo : MonoBehaviour
                 return 3;
             case "Pet/ abandoned puppy":
                 return 4;
+            case "Painting":
+                return 4;
+            case "Flat tire right before school":
+                return 4;
+
 
         }
 
@@ -209,6 +214,58 @@ public class KaartInfo : MonoBehaviour
                 break;
         }
 
+        switch (eventnaam)
+        {
+            case "Painting":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Not my problem";
+                        omschrijving.text = "Leave it there";
+                        break;
+                    case "kaart2":
+                        titel.text = "Responsible";
+                        omschrijving.text = "Pay for the damage";
+                        break;
+                    case "kaart3":
+                        titel.text = "This is for you";
+                        omschrijving.text = "Tell your landlord that it will be reimbursed (This is not true)";
+                        break;
+                    case "kaart4":
+                        titel.text = "Handyman";
+                        omschrijving.text = "Paint it yourself";
+                        break;
+                }
+                break;
+        }
+
+        //schoolkaarten
+        switch (eventnaam)
+        {
+            case "Flat tire right before school":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Handyman";
+                        omschrijving.text = "Repair it yourself";
+                        break;
+                    case "kaart2":
+                        titel.text = "Lifesaver";
+                        omschrijving.text = "Find a shop that can fix your bike";
+                        break;
+                    case "kaart3":
+                        titel.text = "Social powers";
+                        omschrijving.text = "Ask your neighbours if they have a bike you can borrow";
+                        break;
+                    case "kaart4":
+                        titel.text = "Whatever";
+                        omschrijving.text = "Be late for class/skip the class";
+                        break;
+                }
+                break;
+        }
     }
 
     void Update()

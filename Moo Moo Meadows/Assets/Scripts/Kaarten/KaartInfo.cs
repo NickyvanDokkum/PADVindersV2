@@ -33,7 +33,10 @@ public class KaartInfo : MonoBehaviour
                 return 4;
             case "Flat tire right before school":
                 return 4;
-
+            case "School or work":
+                return 3;
+            case "All-nighter":
+                return 4;
 
         }
 
@@ -262,6 +265,52 @@ public class KaartInfo : MonoBehaviour
                     case "kaart4":
                         titel.text = "Whatever";
                         omschrijving.text = "Be late for class/skip the class";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "School or work":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Work";
+                        omschrijving.text = "go to work";
+                        break;
+                    case "kaart2":
+                        titel.text = "School";
+                        omschrijving.text = "go to school";
+                        break;
+                    case "kaart3":
+                        titel.text = "Multitasker";
+                        omschrijving.text = "be late for work";
+                        break;
+                }
+                break;
+        }
+        switch (eventnaam)
+        {
+            case "All-nighter":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Bye bye";
+                        omschrijving.text = "Make your friends leave";
+                        break;
+                    case "kaart2":
+                        titel.text = "You liar";
+                        omschrijving.text = "Tell your landlord there is no such rule in your contract";
+                        break;
+                    case "kaart3":
+                        titel.text = "Bribe";
+                        omschrijving.text = "Pay the fine, and your friends can stay this time";
+                        break;
+                    case "kaart4":
+                        titel.text = "Guests";
+                        omschrijving.text = "Your contract doesn't say you can't have people visit and/or sleep over";
                         break;
                 }
                 break;

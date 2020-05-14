@@ -10,6 +10,9 @@ public class Week : MonoBehaviour
     public int thisWeek;
     Text weekText;
 
+    //deze heeft zijn eigen functie omdat het anders in de verkeerde volgorde kan gaan met de dagen en de weken
+    public UnityEvent advanceToNextWeek;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +34,6 @@ public class Week : MonoBehaviour
     {
         thisWeek++;
         weekText.text = "Week " + thisWeek;
+        advanceToNextWeek.Invoke();
     }
-    //dan moet ik alleen nog even iets bedenken zodat hij ze ook gaat updaten
-
-    //misschien een listener
 }

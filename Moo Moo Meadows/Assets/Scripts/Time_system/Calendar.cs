@@ -23,8 +23,8 @@ public class Calendar : MonoBehaviour
         plannedDays = new List<DayInformation>();
 
         //dit hoort nog bij de event viewer
-        eventInfoViewer = GameObject.Find("Structured event change");
         //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
+        eventInfoViewer.SetActive(true);
         eventInfoViewer.GetComponent<ViewEventInfo>().Start();
         eventInfoViewer.SetActive(false);
     }

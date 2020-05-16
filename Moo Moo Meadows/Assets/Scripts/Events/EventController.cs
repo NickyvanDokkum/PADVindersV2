@@ -21,9 +21,16 @@ public class EventController : MonoBehaviour {
     [SerializeField] private FillStatusBar health;
     [SerializeField] private FillStatusBar home;
 
-    private void Start() {
+    EventController() {
         _eventController = this;
-        this.enabled = false;
+    }
+
+    public void StartSpecificEvent(int eventNum) {
+        CreateEvent(EventList.eventList.GetEvent(eventNum));
+    }
+
+    public void StartRandomEvent() {
+        CreateEvent(EventList.eventList.GetRandomEvent());
     }
 
     public void CreateEvent(Event Event) {

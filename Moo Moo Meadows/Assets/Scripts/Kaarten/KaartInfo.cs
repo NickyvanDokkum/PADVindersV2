@@ -31,6 +31,10 @@ public class KaartInfo : MonoBehaviour
                 return 4;
             case "Painting":
                 return 4;
+            case "Pet 2":
+                return 4;
+
+            //school kaarten
             case "Flat tire right before school":
                 return 4;
             case "School or work":
@@ -38,6 +42,18 @@ public class KaartInfo : MonoBehaviour
             case "All-nighter":
                 return 4;
 
+
+            //fun kaarten
+            case "Friends":
+                return 2;
+            case "New game":
+                return 2;
+            case "Birthday":
+                return 3;
+            case "New clothes":
+                return 2;
+            case "Go to the casino":
+                return 3;
         }
 
         return 0;
@@ -279,6 +295,32 @@ public class KaartInfo : MonoBehaviour
                 break;
         }
 
+        switch (eventnaam)
+        {
+            case "Pet 2":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "If it's for mr. bubbles";
+                        omschrijving.text = "Pay the fee";
+                        break;
+                    case "kaart2":
+                        titel.text = "No";
+                        omschrijving.text = "Don't pay";
+                        break;
+                    case "kaart3":
+                        titel.text = "What rule?";
+                        omschrijving.text = "Say you can't find anything back in the contract about this fee";
+                        break;
+                    case "kaart4":
+                        titel.text = "Threaten";
+                        omschrijving.text = "(If your level is high enough) This is against the law, and you could file a complaint about this";
+                        break;
+                }
+                break;
+        }
+
         //SCHOOL KAARTEN
         switch (eventnaam)
         {
@@ -353,6 +395,107 @@ public class KaartInfo : MonoBehaviour
                     case "kaart4":
                         titel.text = "Guests";
                         omschrijving.text = "Your contract doesn't say you can't have people visit and/or sleep over";
+                        break;
+                }
+                break;
+        }
+
+        //fun kaarten
+
+        switch (eventnaam)
+        {
+            case "Friends":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Go";
+                        omschrijving.text = "Go out with our friends";
+                        break;
+                    case "kaart2":
+                        titel.text = "Don't go";
+                        omschrijving.text = "Don't go out with your friends";
+                        break;
+                }
+                break;
+        }
+
+        switch (eventnaam)
+        {
+            case "New game":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Buy";
+                        omschrijving.text = "Buy the new game";
+                        break;
+                    case "kaart2":
+                        titel.text = "Don't buy";
+                        omschrijving.text = "Don't buy the new game";
+                        break;
+                }
+                break;
+        }
+
+        switch (eventnaam)
+        {
+            case "Birthday":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Go out";
+                        omschrijving.text = "Go out";
+                        break;
+                    case "kaart2":
+                        titel.text = "Buy";
+                        omschrijving.text = "Buy something nice";
+                        break;
+                    case "kaart3":
+                        titel.text = "Just another day";
+                        omschrijving.text = "Don't do anything";
+                        break;
+                }
+                break;
+        }
+
+        switch (eventnaam)
+        {
+            case "New clothes":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Buy";
+                        omschrijving.text = "Buy new clothes";
+                        break;
+                    case "kaart2":
+                        titel.text = "Don't buy";
+                        omschrijving.text = "Don't buy new clothes";
+                        break;
+                }
+                break;
+        }
+
+        switch (eventnaam)
+        {
+            case "Go to the casino":
+
+                switch (kaartnaam)
+                {
+                    case "kaart1":
+                        titel.text = "Don't go";
+                        omschrijving.text = "Don't go to the casino";
+                        break;
+                    case "kaart2":
+                        //hier moet nog iets aan gedaan worden
+                        titel.text = "Luck is by my side";
+                        omschrijving.text = "Go (random: win)";
+                        break;
+                    case "kaart3":
+                        titel.text = "Luck is by my side";
+                        omschrijving.text = "Go (random:lose)";
                         break;
                 }
                 break;

@@ -41,6 +41,7 @@ public class KaartInfo : MonoBehaviour
     }
     public void KaartGegevens(string kaartnaam) //zorgt er dmv switch statements voor dat de text op kaarten wordt veranderd
     {
+        Debug.Log("eventnaam: " + eventnaam);
         switch (eventnaam)
         {
             //HUIS KAARTEN

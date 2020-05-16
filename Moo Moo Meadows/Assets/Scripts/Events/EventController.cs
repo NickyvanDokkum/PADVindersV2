@@ -26,18 +26,21 @@ public class EventController : MonoBehaviour {
     }
 
     public void StartSpecificEvent(int eventNum) {
-        CreateEvent(EventList.eventList.GetEvent(eventNum));
+        Event chosen = EventList.eventList.GetEvent(eventNum);
+        CreateEvent(chosen);
     }
 
     public void StartRandomEvent() {
-        CreateEvent(EventList.eventList.GetRandomEvent());
+        Event chosen = EventList.eventList.GetRandomEvent();
+        CreateEvent(chosen);
     }
 
     public void CreateEvent(Event Event) {
         _title.text = Event.title;
         _body.text = Event.body;
 
-        //TODO: TALK TO THE CARD SYSTEM
+        KaartInfo.eventnaam = Event.title;
+
         _parent.SetActive(true);
         gameObject.SetActive(true);
     }

@@ -6,9 +6,9 @@ public class KaartSpawner : MonoBehaviour
     private GameObject[] meerdereKaarten = new GameObject[2];
     [SerializeField] public Transform hand;
 
-    void Start()
+    void OnEnable()
     {
-        KaartInfo.eventnaam = "Damages to your maintenance"; //selecteert een event
+        //KaartInfo.eventnaam = "Damages to your maintenance"; //selecteert een event
         meerdereKaarten = new GameObject[KaartInfo.GetCardAmount()]; //zet de array naar de hoeveelheid kaart die in de GetCardAmount() functie word aangegeven
         for (int eventKaartAmount = 0; eventKaartAmount < meerdereKaarten.Length; eventKaartAmount++)
         {
@@ -17,5 +17,12 @@ public class KaartSpawner : MonoBehaviour
             meerdereKaarten[eventKaartAmount] = objekkie; //zorgt ervoor dat de juiste hoeveelheid kaarten wordt gespawned
         }
 
+    }
+
+    void OnDisable() {
+        foreach (GameObject kaart in meerdereKaarten) {
+            Destroy(kaart);
+        }
+        meerdereKaarten = null;
     }
 }

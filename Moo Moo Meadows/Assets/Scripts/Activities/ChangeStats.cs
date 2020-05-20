@@ -10,7 +10,7 @@ public class ChangeStats : MonoBehaviour
     public void ShowStatsChange(int amount, string type, List<GameObject> nextScreen)
     {
         this.gameObject.SetActive(true);
-        string text = $"Your {type} have changed by {amount}";
+        string text = $"Your {type} has changed by {amount}";
         transform.Find("Text").GetComponent<Text>().text = text;
         this.nextScreen = nextScreen;
 

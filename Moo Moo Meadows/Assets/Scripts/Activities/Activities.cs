@@ -13,7 +13,7 @@ public class Activities : MonoBehaviour
     [SerializeField] private string type;
     [SerializeField] private int amount;
 
-    public void startEvent()
+    public virtual void StartEvent()
     {
         if (calendar.todaysEvent != null)
         {
@@ -24,7 +24,12 @@ public class Activities : MonoBehaviour
             //start een random event maar dat zit er nog niet in
             eventController.CreateEvent(new Event("New new Title", "This is the new new test test body"));
         }
-
+        ChangeStats(amount);
         statsChange.ShowStatsChange(amount, type, nextScreen);
+    }
+
+    public virtual void ChangeStats(int amount)
+    {
+        status.AddValue(amount);
     }
 }

@@ -36,8 +36,8 @@ public class ChangeStats : MonoBehaviour
         //het eind van de tekst maken
 
         transform.Find("Text").GetComponent<Text>().text = text;
-        this.nextScreen = nextScreen;
 
+        this.nextScreen = nextScreen;
         foreach (GameObject screen in nextScreen)
         {
             screen.SetActive(false);

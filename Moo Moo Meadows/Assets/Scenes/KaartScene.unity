@@ -2904,7 +2904,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -3180,7 +3180,6 @@ MonoBehaviour:
   statsChange: {fileID: 443213513}
   calendar: {fileID: 686849678}
   status: {fileID: 7445152260675983188}
-  eventController: {fileID: 7632065842330240313}
   nextScreen:
   - {fileID: 7632065842330240319}
   - {fileID: 877590083}
@@ -3897,7 +3896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &443213511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12077,7 +12076,6 @@ MonoBehaviour:
   statsChange: {fileID: 443213513}
   calendar: {fileID: 686849678}
   status: {fileID: 7445152259529064435}
-  eventController: {fileID: 7632065842330240313}
   nextScreen:
   - {fileID: 7632065842330240319}
   - {fileID: 877590083}
@@ -12792,11 +12790,10 @@ MonoBehaviour:
   statsChange: {fileID: 443213513}
   calendar: {fileID: 686849678}
   status: {fileID: 0}
-  eventController: {fileID: 7632065842330240313}
   nextScreen:
   - {fileID: 7632065842330240319}
   - {fileID: 877590083}
-  type: 
+  type: money
   amount: 10
   statMoney: {fileID: 497723443}
 --- !u!114 &1470362757
@@ -13447,7 +13444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1506328711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17558,7 +17555,6 @@ MonoBehaviour:
   statsChange: {fileID: 443213513}
   calendar: {fileID: 686849678}
   status: {fileID: 7445152260680652339}
-  eventController: {fileID: 7632065842330240313}
   nextScreen:
   - {fileID: 7632065842330240319}
   - {fileID: 877590083}

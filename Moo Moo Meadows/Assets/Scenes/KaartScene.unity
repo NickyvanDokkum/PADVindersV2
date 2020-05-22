@@ -2923,6 +2923,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 356129034}
+        m_MethodName: ActivateNewEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 877590083}
         m_MethodName: SetActive
         m_Mode: 6
@@ -20538,6 +20549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7632065842330240318}
   - component: {fileID: 7632065842330240313}
+  - component: {fileID: 7632065842330240320}
   m_Layer: 5
   m_Name: Event system
   m_TagString: Untagged
@@ -20545,3 +20557,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &7632065842330240320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7632065842330240319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bf012061bc18b43997e47e72c84ac8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

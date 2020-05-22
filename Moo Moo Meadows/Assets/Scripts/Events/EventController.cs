@@ -21,16 +21,26 @@ public class EventController : MonoBehaviour {
     [SerializeField] private FillStatusBar health;
     [SerializeField] private FillStatusBar home;
 
-    private void Start() {
+    EventController() {
         _eventController = this;
-        this.enabled = false;
+    }
+
+    public void StartSpecificEvent(int eventNum) {
+        Event chosen = EventList.eventList.GetEvent(eventNum);
+        CreateEvent(chosen);
+    }
+
+    public void StartRandomEvent() {
+        Event chosen = EventList.eventList.GetRandomEvent();
+        CreateEvent(chosen);
     }
 
     public void CreateEvent(Event Event) {
         _title.text = Event.title;
         _body.text = Event.body;
 
-        //TODO: TALK TO THE CARD SYSTEM
+        KaartInfo.eventnaam = Event.title;
+
         _parent.SetActive(true);
         gameObject.SetActive(true);
     }

@@ -13,7 +13,7 @@ public class EventList : MonoBehaviour {
     }
 
     public Event GetEvent(int eventNumber) {
-        return events[eventNumber];
+        return structuredEvents[eventNumber];
     }
 
     public Event GetRandomEvent() {
@@ -31,8 +31,12 @@ public class EventList : MonoBehaviour {
         new Event("Noise complaint", "You just got informed you got a noise complaint. Your landlord tells you you need to pay a fine. But in the contract it only says you will receive warnings."),
         new Event("Pet/ abandoned puppy", "Your landlord says that animals are prohibited. What will you do?"),
         new Event("Painting", "While cooking you accidentally leave a burnmark on your wall and ceiling. What will you do?"),
-        new Event("Flat tire right before school", "Your bike just got a flat tire. This is your only way of transportation. What will you do?")/*,
-        new Event("School or work", "Your team needs you at school to finish an assignment, but you need to go to work soon. What will you do?"),
-        new Event("All-nighter", "Your friends are coming over to study for the exam week. Your landlord wants them to leave and is threatening you with a fine for letting other people stay in the house."),*/
+        new Event("Flat tire right before school", "Your bike just got a flat tire. This is your only way of transportation. What will you do?")
         };
-}
+
+
+    private static readonly List<Event> structuredEvents = new List<Event>() {
+        new Event("School or work", "Your team needs you at school to finish an assignment, but you need to go to work soon. What will you do?"),
+        new Event("All-nighter", "Your friends are coming over to study for the exam week. Your landlord wants them to leave and is threatening you with a fine for letting other people stay in the house.")
+        };
+    }

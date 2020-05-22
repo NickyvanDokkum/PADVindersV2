@@ -21,8 +21,7 @@ public class Activities : MonoBehaviour
         }
         else
         {
-            //start een random event maar dat zit er nog niet in
-            eventController.CreateEvent(new Event("New new Title", "This is the new new test test body"));
+            EventController.eventController.StartRandomEvent();
         }
         ChangeStats(amount);
 

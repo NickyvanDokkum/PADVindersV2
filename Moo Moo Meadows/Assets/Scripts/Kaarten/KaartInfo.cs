@@ -90,9 +90,8 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
+
             case "Rent Increase":
                 switch (kaartnaam)
                 {
@@ -119,10 +118,9 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
-              case "Keys":
+
+
+            case "Keys":
 
                 switch (kaartnaam)
                 {
@@ -149,9 +147,8 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
+
             case "Rude invitation":
 
                 switch (kaartnaam)
@@ -181,9 +178,8 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
+
             case "Extra service fees":
 
                 switch (kaartnaam)
@@ -205,9 +201,7 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
             case "Noise complaint":
 
                 switch (kaartnaam)
@@ -229,9 +223,7 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
             case "Pet/ abandoned puppy":
 
                 switch (kaartnaam)
@@ -260,10 +252,8 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
             case "Painting":
 
                 switch (kaartnaam)
@@ -293,10 +283,9 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
+
             case "Pet 2":
 
                 switch (kaartnaam)
@@ -304,6 +293,7 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "If it's for mr. bubbles";
                         omschrijving.text = "Pay the fee";
+                        this.GetComponent<CardStats>().money = -30;
                         break;
                     case "kaart2":
                         titel.text = "No";
@@ -312,18 +302,19 @@ public class KaartInfo : MonoBehaviour
                     case "kaart3":
                         titel.text = "What rule?";
                         omschrijving.text = "Say you can't find anything back in the contract about this fee";
+                        this.GetComponent<CardStats>().home = +2;
                         break;
                     case "kaart4":
                         titel.text = "Threaten";
                         omschrijving.text = "(If your level is high enough) This is against the law, and you could file a complaint about this";
+                        this.GetComponent<CardStats>().home = +4;
                         break;
                 }
                 break;
-        }
 
-        //SCHOOL KAARTEN
-        switch (eventnaam)
-        {
+
+            //SCHOOL KAARTEN
+
             case "Flat tire right before school":
 
                 switch (kaartnaam)
@@ -352,9 +343,8 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
+
             case "School or work":
 
                 switch (kaartnaam)
@@ -362,20 +352,25 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Work";
                         omschrijving.text = "go to work";
+                        this.GetComponent<CardStats>().grades = -5;
+                        this.GetComponent<CardStats>().money = +50;
                         break;
                     case "kaart2":
                         titel.text = "School";
                         omschrijving.text = "go to school";
+                        this.GetComponent<CardStats>().grades = +15;
+                        this.GetComponent<CardStats>().money = -20;
                         break;
                     case "kaart3":
                         titel.text = "Multitasker";
                         omschrijving.text = "be late for work";
+                        this.GetComponent<CardStats>().grades = +5;
+                        this.GetComponent<CardStats>().money = +15;
                         break;
                 }
                 break;
-        }
-        switch (eventnaam)
-        {
+
+
             case "All-nighter":
 
                 switch (kaartnaam)
@@ -383,27 +378,34 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Bye bye";
                         omschrijving.text = "Make your friends leave";
+                        this.GetComponent<CardStats>().hapiness = -5;
+                        this.GetComponent<CardStats>().grades = -5;
                         break;
                     case "kaart2":
                         titel.text = "You liar";
                         omschrijving.text = "Tell your landlord there is no such rule in your contract";
+                        this.GetComponent<CardStats>().home = -2;
                         break;
                     case "kaart3":
                         titel.text = "Bribe";
                         omschrijving.text = "Pay the fine, and your friends can stay this time";
+                        this.GetComponent<CardStats>().home = -2;
+                        this.GetComponent<CardStats>().hapiness = +5;
                         break;
                     case "kaart4":
                         titel.text = "Guests";
                         omschrijving.text = "Your contract doesn't say you can't have people visit and/or sleep over";
+                        this.GetComponent<CardStats>().home = +2;
+                        this.GetComponent<CardStats>().hapiness = +5;
+                        this.GetComponent<CardStats>().grades = +10;
                         break;
                 }
                 break;
-        }
 
-        //fun kaarten
 
-        switch (eventnaam)
-        {
+            //fun kaarten
+
+
             case "Friends":
 
                 switch (kaartnaam)
@@ -411,17 +413,19 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Go";
                         omschrijving.text = "Go out with our friends";
+                        this.GetComponent<CardStats>().hapiness = +5;
+                        this.GetComponent<CardStats>().money = -15;
                         break;
                     case "kaart2":
                         titel.text = "Don't go";
                         omschrijving.text = "Don't go out with your friends";
+                        this.GetComponent<CardStats>().hapiness = -5;
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
+
             case "New game":
 
                 switch (kaartnaam)
@@ -429,6 +433,8 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Buy";
                         omschrijving.text = "Buy the new game";
+                        this.GetComponent<CardStats>().hapiness = +5;
+                        this.GetComponent<CardStats>().money = -15;
                         break;
                     case "kaart2":
                         titel.text = "Don't buy";
@@ -436,10 +442,9 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
+
             case "Birthday":
 
                 switch (kaartnaam)
@@ -447,10 +452,13 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Go out";
                         omschrijving.text = "Go out";
+                        this.GetComponent<CardStats>().hapiness = +15;
+                        this.GetComponent<CardStats>().money = -20;
                         break;
                     case "kaart2":
                         titel.text = "Buy";
                         omschrijving.text = "Buy something nice";
+                        this.GetComponent<CardStats>().money = +25;
                         break;
                     case "kaart3":
                         titel.text = "Just another day";
@@ -458,10 +466,9 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
+
             case "New clothes":
 
                 switch (kaartnaam)
@@ -469,6 +476,8 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Buy";
                         omschrijving.text = "Buy new clothes";
+                        this.GetComponent<CardStats>().money = -15;
+                        this.GetComponent<CardStats>().hapiness = +5;
                         break;
                     case "kaart2":
                         titel.text = "Don't buy";
@@ -476,10 +485,9 @@ public class KaartInfo : MonoBehaviour
                         break;
                 }
                 break;
-        }
 
-        switch (eventnaam)
-        {
+
+
             case "Go to the casino":
 
                 switch (kaartnaam)
@@ -487,15 +495,19 @@ public class KaartInfo : MonoBehaviour
                     case "kaart1":
                         titel.text = "Don't go";
                         omschrijving.text = "Don't go to the casino";
+                        this.GetComponent<CardStats>().hapiness = -5;
                         break;
                     case "kaart2":
                         //hier moet nog iets aan gedaan worden
-                        titel.text = "Luck is by my side";
-                        omschrijving.text = "Go (random: win)";
+                        titel.text = "all on black";
+                        omschrijving.text = "Go with your friends"; //win
+                        this.GetComponent<CardStats>().hapiness = +5;
+                        this.GetComponent<CardStats>().money = +40;
                         break;
                     case "kaart3":
-                        titel.text = "Luck is by my side";
-                        omschrijving.text = "Go (random:lose)";
+                        titel.text = "all on red";
+                        omschrijving.text = "Go with your friends";//lose
+                        this.GetComponent<CardStats>().hapiness = -40;
                         break;
                 }
                 break;

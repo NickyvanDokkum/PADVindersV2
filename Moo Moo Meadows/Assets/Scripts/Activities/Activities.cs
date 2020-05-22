@@ -25,7 +25,22 @@ public class Activities : MonoBehaviour
             eventController.CreateEvent(new Event("New new Title", "This is the new new test test body"));
         }
         ChangeStats(amount);
-        statsChange.ShowStatsChange(amount, type, nextScreen);
+
+        switch (type)
+        {
+            case("money"):
+                statsChange.ShowStatsChange(nextScreen, moneyAmount: amount);
+                break;
+            case ("stress"):
+                statsChange.ShowStatsChange(nextScreen, stressAmount: amount);
+                break;
+            case ("home"):
+                statsChange.ShowStatsChange(nextScreen, homeAmount: amount);
+                break;
+            case ("grades"):
+                statsChange.ShowStatsChange(nextScreen, gradesAmount: amount);
+                break;
+        }
     }
 
     public virtual void ChangeStats(int amount)

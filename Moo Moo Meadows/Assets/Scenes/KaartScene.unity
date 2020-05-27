@@ -6290,7 +6290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 298a9215df13a8147b8d6411f2522364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDay: 0
+  eventList: {fileID: 7632065842330240320}
   eventInfoViewer: {fileID: 843097238}
   advanceWeek:
     m_PersistentCalls:

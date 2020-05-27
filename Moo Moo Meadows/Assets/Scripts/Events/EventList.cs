@@ -16,6 +16,11 @@ public class EventList : MonoBehaviour {
         return structuredEvents[eventNumber];
     }
 
+    public int GetEventAmount()
+    {
+        return structuredEvents.Count;
+    }
+
     public Event GetRandomEvent() {
         int rand = Mathf.RoundToInt(Random.Range(0, events.Count-1));
         return events[rand];

@@ -12079,7 +12079,7 @@ MonoBehaviour:
   nextScreen:
   - {fileID: 7632065842330240319}
   - {fileID: 877590083}
-  type: happiness
+  type: stress
   amount: 3
 --- !u!1 &1368592660
 GameObject:
@@ -21268,6 +21268,7 @@ MonoBehaviour:
   grades: {fileID: 7445152260680652339}
   health: {fileID: 7445152260675983188}
   home: {fileID: 7445152259286578530}
+  changeStatsScreen: {fileID: 443213513}
 --- !u!224 &7632065842330240318
 RectTransform:
   m_ObjectHideFlags: 0

@@ -50,7 +50,7 @@ public class Calendar : MonoBehaviour
                 int plannedDay = currentDay + (week * 7);
                 FillWeek(plannedDay);
             }
-
+            todaysEvent = GetTodaysEvent();
         }
     }
 
@@ -59,22 +59,12 @@ public class Calendar : MonoBehaviour
     {
 
         currentDay++;
-
-        if (dayOfWeek > daysOfWeek.Length)
-        {
-            dayOfWeek++;
-        }
-        else
-        {
-            dayOfWeek = 0;
-        }
-        day.GetComponent<Text>().text = daysOfWeek[dayOfWeek];
-        Debug.Log("sadfjkbjksdafjksfdhsdhafhdsfdsfjakjhadsfhjdsfhjadsfhjdsfakdsafjdsfhsdfajkasdfkjadsfhjsahjadsfjads            " + day.GetComponent<Text>().text);
+        dayOfWeek++;
 
         //check of de week is afgelopen om vervolgens de huur te betalen
         if (currentDay % 7 == 1)
         {
-            //betaal de huur (nog niet gemaakt)
+            dayOfWeek = 0;
 
             int deletedDays = 0;
             //verwijder de dingen uit de list van de vorige week
@@ -103,23 +93,8 @@ public class Calendar : MonoBehaviour
             advanceWeek.Invoke();
         }
 
-        //check of er event zijn ingepland voor de volgende dag
-        bool todayIsEvent = false;
-        foreach (DayInformation plannedDay in plannedDays)
-        {
-
-            if (plannedDay.day == currentDay)
-            {
-                todaysEvent = plannedDay.cardEvent;
-                todayIsEvent = true;
-                break;
-            }
-        }
-        if (!todayIsEvent)
-        {
-            todaysEvent = null;
-        }
-
+        todaysEvent = GetTodaysEvent();
+        day.GetComponent<Text>().text = daysOfWeek[dayOfWeek];
     }
 
     public Event GetEventForDay(int day)
@@ -156,6 +131,20 @@ public class Calendar : MonoBehaviour
                 eventList.GetEvent(Random.Range(0, eventsAmount)));
             }
         }
+    }
+
+    Event GetTodaysEvent()
+    {
+        foreach (DayInformation plannedDay in plannedDays)
+        {
+
+            if (plannedDay.day == currentDay)
+            {
+                return plannedDay.cardEvent;
+            }
+        }
+
+        return null;
     }
 
     class DayInformation

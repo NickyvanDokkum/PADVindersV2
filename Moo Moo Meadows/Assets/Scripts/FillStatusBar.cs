@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FillStatusBar: MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FillStatusBar: MonoBehaviour
     public float maxStats;
     public Image fillimage;
     private Slider slider;
+    [SerializeField] private bool homeSlider = false;
 
     private bool started = false;
 
@@ -33,7 +35,16 @@ public class FillStatusBar: MonoBehaviour
         float fillValue = currentStats / maxStats;
         Debug.Log("slider" + slider);
         Debug.Log("slider value" + slider.value);
-        slider.value = fillValue; 
+        slider.value = fillValue;
+
+        if (homeSlider) {
+            if (fillValue >= maxStats) {
+                SceneManager.LoadScene(1);
+            }
+            else if (fillValue <= 0) {
+                SceneManager.LoadScene(2);
+            }
+        }
     }
 
     //Functie wordt gebruikt om de stats te veranderen

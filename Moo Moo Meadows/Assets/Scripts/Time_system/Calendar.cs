@@ -3,15 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class Calendar : MonoBehaviour
 {
     List<DayInformation> plannedDays;
-    [NonSerialized] public int currentDay;
+    public int currentDay;
     public Event todaysEvent;
 
     [SerializeField] EventList eventList;
+    [SerializeField] GameObject day;
+
+    string[] daysOfWeek;
+    int dayOfWeek;
 
     //dit moet hier opgeslagen worden omdat het moet starten als het aan staat en als ik het uit ga zetten na elke dag gaat alles kapot
     public GameObject eventInfoViewer;
@@ -24,9 +29,13 @@ public class Calendar : MonoBehaviour
     // Start is called before the first frame update
     public void StartUp()
     {
+        if (!started)
+        {
             started = true;
             currentDay = 1;
             plannedDays = new List<DayInformation>();
+            daysOfWeek = new string[7] {"Monday", "Teusday", "Wednesday", "Theurseday", "Friday", "Saturday", "Sunday"};
+            dayOfWeek = 0;
 
             //dit hoort nog bij de event viewer
             //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
@@ -41,6 +50,8 @@ public class Calendar : MonoBehaviour
                 int plannedDay = currentDay + (week * 7);
                 FillWeek(plannedDay);
             }
+
+        }
     }
 
     public void AdvanceDay()
@@ -48,6 +59,17 @@ public class Calendar : MonoBehaviour
     {
 
         currentDay++;
+
+        if (dayOfWeek > daysOfWeek.Length)
+        {
+            dayOfWeek++;
+        }
+        else
+        {
+            dayOfWeek = 0;
+        }
+        day.GetComponent<Text>().text = daysOfWeek[dayOfWeek];
+        Debug.Log("sadfjkbjksdafjksfdhsdhafhdsfdsfjakjhadsfhjdsfhjadsfhjdsfakdsafjdsfhsdfajkasdfkjadsfhjsahjadsfjads            " + day.GetComponent<Text>().text);
 
         //check of de week is afgelopen om vervolgens de huur te betalen
         if (currentDay % 7 == 1)

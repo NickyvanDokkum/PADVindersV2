@@ -8,7 +8,6 @@ public class Activities : MonoBehaviour
     [SerializeField] ChangeStats statsChange;
     [SerializeField] Calendar calendar;
     [SerializeField] private FillStatusBar status;
-    [SerializeField] EventController eventController;
     [SerializeField] List<GameObject> nextScreen;
     [SerializeField] private string type;
     [SerializeField] private int amount;
@@ -23,8 +22,24 @@ public class Activities : MonoBehaviour
         {
             EventController.eventController.StartRandomEvent();
         }
+
         ChangeStats(amount);
-        statsChange.ShowStatsChange(amount, type, nextScreen);
+
+        switch (type)
+        {
+            case("money"):
+                statsChange.ShowStatsChange(nextScreen, moneyAmount: amount);
+                break;
+            case ("stress"):
+                statsChange.ShowStatsChange(nextScreen, stressAmount: amount);
+                break;
+            case ("home"):
+                statsChange.ShowStatsChange(nextScreen, homeAmount: amount);
+                break;
+            case ("grades"):
+                statsChange.ShowStatsChange(nextScreen, gradesAmount: amount);
+                break;
+        }
     }
 
     public virtual void ChangeStats(int amount)

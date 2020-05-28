@@ -22,6 +22,7 @@ public class EventController : MonoBehaviour {
     [SerializeField] private FillStatusBar home;
 
     [SerializeField] private ChangeStats changeStatsScreen;
+    [SerializeField] private Calendar calendar;
 
     EventController() {
         _eventController = this;
@@ -75,6 +76,7 @@ public class EventController : MonoBehaviour {
         List<GameObject> hub = new List<GameObject>();
         hub.Add(_hub);
         changeStatsScreen.ShowStatsChange(hub, moneyAmount: moneyAmount, stressAmount: hapinessAmount, gradesAmount: gradesAmount, healthAmount: healthAmount, homeAmount: homeAmount);
+        calendar.AdvanceDay();
         gameObject.SetActive(false);
     }
 }

@@ -19,7 +19,7 @@ public class ChangeStats : MonoBehaviour
         }
         if (stressAmount != 0)
         {
-            text += $"\n Stress {stressAmount}";
+            text += $"\n Happiness {stressAmount}";
         }
         if (gradesAmount != 0)
         {
@@ -33,7 +33,12 @@ public class ChangeStats : MonoBehaviour
         {
             text += $"\n Home {homeAmount}";
         }
-        //het eind van de tekst maken
+        
+        //als er niks is verandert
+        if(text == "Stats increase")
+        {
+            text += $"\n Nothing changed";
+        }
 
         transform.Find("Text").GetComponent<Text>().text = text;
 

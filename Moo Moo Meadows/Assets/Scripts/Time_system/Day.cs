@@ -56,6 +56,11 @@ public class Day : MonoBehaviour
         }
 
         ShowTodaysEvent();
+        if (!calendar.started)
+        {
+            calendarUI.SetActive(false);
+            calendar.started = true;
+        }
     }
 
     void AdvanceWeek()

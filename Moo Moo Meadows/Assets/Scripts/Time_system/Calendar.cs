@@ -25,13 +25,12 @@ public class Calendar : MonoBehaviour
     public UnityEvent advanceWeek;
 
 
-    bool started = false;
-    // Start is called before the first frame update
+    public bool started = false;
+
     public void StartUp()
     {
         if (!started)
         {
-            started = true;
             currentDay = 1;
             plannedDays = new List<DayInformation>();
             daysOfWeek = new string[7] {"Monday", "Teusday", "Wednesday", "Theurseday", "Friday", "Saturday", "Sunday"};
@@ -67,6 +66,7 @@ public class Calendar : MonoBehaviour
             dayOfWeek = 0;
 
             int deletedDays = 0;
+
             //verwijder de dingen uit de list van de vorige week
             for (int index = plannedDays.Count - 1; index >= 0; index--)
             {

@@ -39,6 +39,9 @@ public class Activities : MonoBehaviour
             case ("grades"):
                 statsChange.ShowStatsChange(nextScreen, gradesAmount: amount);
                 break;
+            case ("health"):
+                statsChange.ShowStatsChange(nextScreen, healthAmount: amount);
+                break;
         }
     }
 

@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Random = UnityEngine.Random;
 
 public class Calendar : MonoBehaviour
 {
     List<DayInformation> plannedDays;
-    public int currentDay;
+    [NonSerialized] public int currentDay;
     public Event todaysEvent;
+
+    [SerializeField] EventList eventList;
 
     //dit moet hier opgeslagen worden omdat het moet starten als het aan staat en als ik het uit ga zetten na elke dag gaat alles kapot
     public GameObject eventInfoViewer;
@@ -16,17 +19,28 @@ public class Calendar : MonoBehaviour
     // hierdoor kunnen de scripten van de weeken meeluisteren of er een week voorbij is
     public UnityEvent advanceWeek;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        currentDay = 1;
-        plannedDays = new List<DayInformation>();
 
-        //dit hoort nog bij de event viewer
-        //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
-        eventInfoViewer.SetActive(true);
-        eventInfoViewer.GetComponent<ViewEventInfo>().Start();
-        eventInfoViewer.SetActive(false);
+    bool started = false;
+    // Start is called before the first frame update
+    public void StartUp()
+    {
+            started = true;
+            currentDay = 1;
+            plannedDays = new List<DayInformation>();
+
+            //dit hoort nog bij de event viewer
+            //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
+            eventInfoViewer.SetActive(true);
+            eventInfoViewer.GetComponent<ViewEventInfo>().Start();
+            eventInfoViewer.SetActive(false);
+
+            //plan de eerste 4 weken
+            int numberOfWeeks = 4;
+            for (int week = 0; week < numberOfWeeks; week++)
+            {
+                int plannedDay = currentDay + (week * 7);
+                FillWeek(plannedDay);
+            }
     }
 
     public void AdvanceDay()
@@ -59,6 +73,10 @@ public class Calendar : MonoBehaviour
                 }
             }
 
+            //plan events voor de nieuwe week
+            int weeks = 3;
+            int daysInWeek = 7;
+            FillWeek(currentDay + (weeks * daysInWeek));
 
             advanceWeek.Invoke();
         }
@@ -100,12 +118,28 @@ public class Calendar : MonoBehaviour
         plannedDays.Add(new DayInformation(day, cardEvent));
     }
 
+    void FillWeek(int startDay)
+    {
+        int changeForEvent = 40;
+        for (int day = 0; day < 7; day++)
+        {
+            //get random change for event
+            if(Random.Range(1, 100) <= changeForEvent)
+            {
+                //plan a random structured event
+                int  eventsAmount = eventList.GetEventAmount();
+                //put the event in the calendar
+                PlanEvent(startDay + day,
+                //get the event from the eventlist
+                eventList.GetEvent(Random.Range(0, eventsAmount)));
+            }
+        }
+    }
+
     class DayInformation
     {
         public int day;
         public Event cardEvent;
-
-        // hier moet ook het event worden opgeslagen
 
         public DayInformation(int day, Event cardEvent)
         {

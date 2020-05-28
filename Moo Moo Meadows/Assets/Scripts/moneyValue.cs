@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class moneyValue : MonoBehaviour
 {
-    private int money;
+    public int money;
     [SerializeField] private Text text;
 
     public void SetStat(int stat)

@@ -19,25 +19,28 @@ public class Calendar : MonoBehaviour
     // hierdoor kunnen de scripten van de weeken meeluisteren of er een week voorbij is
     public UnityEvent advanceWeek;
 
+
+    bool started = false;
     // Start is called before the first frame update
-    public void Start()
+    public void StartUp()
     {
-        currentDay = 1;
-        plannedDays = new List<DayInformation>();
+            started = true;
+            currentDay = 1;
+            plannedDays = new List<DayInformation>();
 
-        //dit hoort nog bij de event viewer
-        //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
-        eventInfoViewer.SetActive(true);
-        eventInfoViewer.GetComponent<ViewEventInfo>().Start();
-        eventInfoViewer.SetActive(false);
+            //dit hoort nog bij de event viewer
+            //anders start hij pas nadat de eerste functie is uitgevoerd en dat werkt niet
+            eventInfoViewer.SetActive(true);
+            eventInfoViewer.GetComponent<ViewEventInfo>().Start();
+            eventInfoViewer.SetActive(false);
 
-        //plan de eerste 4 weken
-        int numberOfWeeks = 4;
-        for (int week = 0; week < numberOfWeeks; week++)
-        {
-            int plannedDay = currentDay + (week * 7);
-            FillWeek(plannedDay);
-        }
+            //plan de eerste 4 weken
+            int numberOfWeeks = 4;
+            for (int week = 0; week < numberOfWeeks; week++)
+            {
+                int plannedDay = currentDay + (week * 7);
+                FillWeek(plannedDay);
+            }
     }
 
     public void AdvanceDay()
@@ -137,8 +140,6 @@ public class Calendar : MonoBehaviour
     {
         public int day;
         public Event cardEvent;
-
-        // hier moet ook het event worden opgeslagen
 
         public DayInformation(int day, Event cardEvent)
         {

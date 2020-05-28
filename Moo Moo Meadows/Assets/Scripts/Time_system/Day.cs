@@ -22,6 +22,8 @@ public class Day : MonoBehaviour
         week = this.GetComponentInParent<Week>();
         thisButton = this.GetComponent<Button>();
         startingColor = thisButton.colors.normalColor;
+        calendar.StartUp();
+        week.StartUp();
 
         //hierdoor luistert hij of er een week voorbij is
         week.advanceToNextWeek.AddListener(AdvanceWeek);
@@ -52,9 +54,26 @@ public class Day : MonoBehaviour
                 DayOfWeek = 7;
                 break;
         }
+
+        ShowTodaysEvent();
     }
 
     void AdvanceWeek()
+    {
+        ShowTodaysEvent();
+    }
+
+    public void ShowEventInfo()
+    {
+        if (this.eventData != null)
+        {
+            calendar.eventInfoViewer.SetActive(true);
+            calendar.eventInfoViewer.GetComponent<ViewEventInfo>().ShowEvent(eventData);
+            calendarUI.SetActive(false);
+        }
+    }
+
+    void ShowTodaysEvent()
     {
         int weekOffset = -1;
         this.eventData = calendar.GetEventForDay((week.thisWeek + weekOffset) * 7 + DayOfWeek);
@@ -70,15 +89,5 @@ public class Day : MonoBehaviour
             buttonColor.normalColor = startingColor;
         }
         thisButton.colors = buttonColor;
-    }
-
-    public void ShowEventInfo()
-    {
-        if (this.eventData != null)
-        {
-            calendar.eventInfoViewer.SetActive(true);
-            calendar.eventInfoViewer.GetComponent<ViewEventInfo>().ShowEvent(eventData);
-            calendarUI.SetActive(false);
-        }
     }
 }

@@ -33,7 +33,7 @@ public class Calendar : MonoBehaviour
         {
             currentDay = 1;
             plannedDays = new List<DayInformation>();
-            daysOfWeek = new string[7] {"Monday", "Teusday", "Wednesday", "Theurseday", "Friday", "Saturday", "Sunday"};
+            daysOfWeek = new string[7] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
             dayOfWeek = 0;
 
             //dit hoort nog bij de event viewer

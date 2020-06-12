@@ -10,7 +10,7 @@ public class FillStatusBar: MonoBehaviour
     public float maxStats;
     public Image fillimage;
     private Slider slider;
-    [SerializeField] private bool homeSlider = false;
+    [SerializeField] private bool homeSlider = false; //To check if it's a win condition
 
     private bool started = false;
 
@@ -37,12 +37,13 @@ public class FillStatusBar: MonoBehaviour
         Debug.Log("slider value" + slider.value);
         slider.value = fillValue;
 
+        //If the win slider is full or empty, it will load one of the game over screens
         if (homeSlider) {
             if (fillValue >= maxStats) {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(1); //This will load the win screen
             }
             else if (fillValue <= 0) {
-                SceneManager.LoadScene(2);
+                SceneManager.LoadScene(2); //This will load the lose screen
             }
         }
     }

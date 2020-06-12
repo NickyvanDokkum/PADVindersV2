@@ -7,6 +7,6 @@ public class EndScreenShenanigans : MonoBehaviour
 {
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0); //This loads the game scene
     }
 }

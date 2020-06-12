@@ -3,30 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EventList : MonoBehaviour {
+
+    //The eventList function returns the only existing EventList script
     public static EventList eventList {
         get { return _eventList; }
     }
+    //_eventList is the only existing EventList and can only be accessed from the eventList function
     private static EventList _eventList;
 
+    //The constructor sets the _eventList to be the just created class
     EventList() {
         _eventList = this;
     }
 
+    //The GetEvent function lets you get a specific structured event
     public Event GetEvent(int eventNumber) {
         return structuredEvents[eventNumber];
     }
 
+    //The GetEventAmount function returns the amount of structured events in the structuredEvents list
     public int GetEventAmount()
     {
         return structuredEvents.Count;
     }
 
+    //The GetRandomEvent function returns a random event from the events list
     public Event GetRandomEvent() {
         int rand = Mathf.RoundToInt(Random.Range(0, events.Count-1));
         return events[rand];
     }
 
-
+    //The events list holds random events that can appear in the game
     private static readonly List<Event> events = new List<Event>() {
         new Event("Damages to your maintenance", "Your heater/fan/etc just broke. You tell your landlord about this and he says you need to pay it yourself."),
         new Event("Rent Increase", "Your landlord will be increasing your rent. But you just started living here! What will you do about it?"),
@@ -40,7 +47,7 @@ public class EventList : MonoBehaviour {
         new Event("Friends", "Your friends want to go out.")
         };
 
-
+    //The structuredEvents list holds the structured events that will appear in the calender
     private static readonly List<Event> structuredEvents = new List<Event>() {
         new Event("School or work", "Your team needs you at school to finish an assignment, but you need to go to work soon. What will you do?"),
         new Event("All-nighter", "Your friends are coming over to study for the exam week. Your landlord wants them to leave and is threatening you with a fine for letting other people stay in the house."),
